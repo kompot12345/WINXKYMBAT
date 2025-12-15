@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 240px;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 14px;
+  background: white;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.meta {
+  margin: 4px 0;
+  opacity: 0.85;
+}

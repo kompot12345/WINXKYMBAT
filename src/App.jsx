@@ -2,6 +2,8 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import MainDashboard from './components/MainDashboard';
 
+import { tasks } from "./tasks";
+
 function App() {
   return (
     <div
@@ -9,10 +11,12 @@ function App() {
         minHeight: '100vh',
         display: 'flex',
         background: 'linear-gradient(135deg, #ffe6ff, #d9c7ff, #fffbf2)',
-        fontFamily: '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+        fontFamily:
+          '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
       }}
     >
       <Sidebar />
+
       <div
         style={{
           flex: 1,
@@ -23,11 +27,10 @@ function App() {
         }}
       >
         <Header />
-        <MainDashboard />
+        <MainDashboard tasks={tasks} />
       </div>
     </div>
   );
 }
 
 export default App;
-
