@@ -1,0 +1,93 @@
+.wrapper {
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 240, 255, 0.9),
+    rgba(230, 215, 255, 0.9)
+  );
+  border: 1px solid rgba(210, 190, 255, 0.9);
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  color: #6c3dc6;
+}
+
+.subtitle {
+  margin: 6px 0 16px;
+  font-size: 13px;
+  color: #8b63d1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input,
+.textarea {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 180, 255, 0.9);
+  font-size: 14px;
+}
+
+.textarea {
+  resize: none;
+  height: 70px;
+}
+
+.addBtn {
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ffccff, #cbb3ff);
+  color: #5b35ab;
+  font-weight: 600;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(210, 190, 255, 0.8);
+  box-shadow: 0 8px 20px rgba(180, 140, 255, 0.18);
+}
+
+.cardTitle {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: #6c3dc6;
+}
+
+.cardDesc {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #3c246e;
+}
+
+.date {
+  font-size: 12px;
+  color: #8b63d1;
+}
+
+.deleteBtn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 220, 240, 0.9);
+  color: #a03a7a;
+}

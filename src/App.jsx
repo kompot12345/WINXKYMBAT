@@ -2,6 +2,7 @@ import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import MainDashboard from './components/MainDashboard';
 import UserForm from "./components/UserForm";
+import Boards from "./components/Boards";
 
 import { tasks } from "./tasks";
 
@@ -16,10 +17,10 @@ function App() {
           '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
       }}
     >
-      {/* Sidebar */}
+      {/* 🌸 Sidebar */}
       <Sidebar />
 
-      {/* Main content */}
+      {/* 🌈 Main content */}
       <div
         style={{
           flex: 1,
@@ -27,24 +28,39 @@ function App() {
           flexDirection: 'column',
           padding: '16px',
           boxSizing: 'border-box',
+          gap: '24px',
         }}
       >
+        {/* ✨ Header */}
         <Header />
 
-        {/* Dashboard with props */}
+        {/* 🧚‍♀️ Dashboard with Winx quests */}
         <MainDashboard tasks={tasks} />
 
-        {/* ===== HW: useState + Form ===== */}
+        {/* 💖 HW: UserForm (Winx Fairy Profile) */}
         <div
           style={{
-            marginTop: '24px',
             padding: '16px',
-            borderRadius: '16px',
+            borderRadius: '18px',
             backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            boxShadow: '0 8px 20px rgba(180, 140, 255, 0.25)',
+            boxShadow: '0 10px 26px rgba(180, 140, 255, 0.25)',
+            border: '1px solid rgba(230, 210, 255, 0.9)',
           }}
         >
           <UserForm />
+        </div>
+
+        {/* ✨ HW: Mock Boards (Winx Style) */}
+        <div
+          style={{
+            padding: '16px',
+            borderRadius: '18px',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            boxShadow: '0 10px 26px rgba(180, 140, 255, 0.25)',
+            border: '1px solid rgba(230, 210, 255, 0.9)',
+          }}
+        >
+          <Boards />
         </div>
       </div>
     </div>
