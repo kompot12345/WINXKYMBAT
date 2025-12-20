@@ -1,66 +1,36 @@
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import MainDashboard from './components/MainDashboard';
-import UserForm from "./components/UserForm";
-import Boards from "./components/Boards";
+import { useState } from "react";
 
-import { tasks } from "./tasks";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import MainDashboard from "./components/MainDashboard";
+import UserForm from "./components/UserForm"; // optional, keep if you want
 
 function App() {
+  // ✅ REQUIRED BY HW: boards state in App.jsx
+  const [boards] = useState([
+    { id: 1, title: "💖 Мой проект", description: "Описание проекта" },
+    { id: 2, title: "📚 Учёба", description: "Домашние задания" },
+    { id: 3, title: "🧚‍♀️ Алфея", description: "Прокачка магии и дисциплины" },
+    { id: 4, title: "✨ Enchantix", description: "Планы и цели на неделю" },
+    { id: 5, title: "🌙 Bloom Mode", description: "Фокус и спокойная продуктивность" },
+    { id: 6, title: "🌈 Rainbow Missions", description: "Квесты, которые дают +XP" },
+  ]);
+
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        background: 'linear-gradient(135deg, #ffe6ff, #d9c7ff, #fffbf2)',
-        fontFamily:
-          '"Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
-      }}
-    >
-      {/* 🌸 Sidebar */}
-      <Sidebar />
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-100 to-amber-50">
+      <div className="min-h-screen flex">
+        <Sidebar />
 
-      {/* 🌈 Main content */}
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          padding: '16px',
-          boxSizing: 'border-box',
-          gap: '24px',
-        }}
-      >
-        {/* ✨ Header */}
-        <Header />
+        <div className="flex-1 p-4 md:p-6 space-y-6">
+          <Header />
 
-        {/* 🧚‍♀️ Dashboard with Winx quests */}
-        <MainDashboard tasks={tasks} />
+          {/* ✅ Tailwind boards cards */}
+          <MainDashboard boards={boards} />
 
-        {/* 💖 HW: UserForm (Winx Fairy Profile) */}
-        <div
-          style={{
-            padding: '16px',
-            borderRadius: '18px',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            boxShadow: '0 10px 26px rgba(180, 140, 255, 0.25)',
-            border: '1px solid rgba(230, 210, 255, 0.9)',
-          }}
-        >
-          <UserForm />
-        </div>
-
-        {/* ✨ HW: Mock Boards (Winx Style) */}
-        <div
-          style={{
-            padding: '16px',
-            borderRadius: '18px',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            boxShadow: '0 10px 26px rgba(180, 140, 255, 0.25)',
-            border: '1px solid rgba(230, 210, 255, 0.9)',
-          }}
-        >
-          <Boards />
+          {/* Optional: keep previous feature, doesn't break HW */}
+          <div className="rounded-xl bg-white/80 border border-slate-200 p-4 shadow-sm">
+            <UserForm />
+          </div>
         </div>
       </div>
     </div>

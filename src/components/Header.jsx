@@ -1,62 +1,51 @@
-function Header() {
-  return (
-    <header
-      style={{
-        padding: '16px 24px',
-        borderRadius: '18px',
-        background:
-          'linear-gradient(120deg, rgba(255, 153, 230, 0.95), rgba(153, 102, 255, 0.95))',
-        color: 'white',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        boxShadow: '0 12px 25px rgba(120, 70, 200, 0.35)',
-        marginBottom: '16px',
-      }}
-    >
-      <div>
-        <h1
-          style={{
-            margin: 0,
-            fontSize: '26px',
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase',
-          }}
-        >
-          TaskNest ✨
-        </h1>
-        <p
-          style={{
-            margin: '6px 0 0',
-            fontSize: '14px',
-            opacity: 0.95,
-          }}
-        >
-          Believe in your magic — and your to-do list 💫
-        </p>
-      </div>
+import { useState } from "react";
 
-      <div
-        style={{
-          padding: '8px 14px',
-          borderRadius: '999px',
-          backgroundColor: 'rgba(255, 255, 255, 0.18)',
-          border: '1px solid rgba(255, 255, 255, 0.6)',
-          fontSize: '13px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '6px',
-        }}
-      >
-        <span role="img" aria-label="fairy">
-          🧚‍♀️
-        </span>
-        <span>Winx mode: ON</span>
+export default function Header() {
+  const [mode, setMode] = useState(true);
+
+  return (
+    <header className="bg-slate-800 px-4 py-3 rounded-xl border border-slate-700 shadow-lg">
+      <div className="flex items-center justify-between">
+        {/* Left */}
+        <div className="flex items-center gap-3">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-300 flex items-center justify-center shadow">
+            ✨
+          </div>
+          <div className="leading-tight">
+            <h1 className="text-white text-xl font-semibold tracking-wide">
+              TaskNest <span className="text-gray-300">Winx</span>
+            </h1>
+            <p className="text-gray-300 text-xs">
+              Believe in your magic — and your to-do list
+            </p>
+          </div>
+        </div>
+
+        {/* Right */}
+        <div className="flex items-center gap-2">
+          <nav className="hidden sm:flex items-center gap-1">
+            <button className="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700 transition">
+              Dashboard
+            </button>
+            <button className="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700 transition">
+              Boards
+            </button>
+            <button className="px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-slate-700 transition">
+              Profile
+            </button>
+          </nav>
+
+          <button
+            onClick={() => setMode((v) => !v)}
+            className="px-3 py-2 rounded-full bg-white/15 border border-white/30 text-white text-xs
+                       hover:bg-white/20 hover:border-white/40 transition flex items-center gap-2"
+            title="Toggle Winx mode"
+          >
+            <span aria-hidden>🧚‍♀️</span>
+            <span>Winx mode: {mode ? "ON" : "OFF"}</span>
+          </button>
+        </div>
       </div>
     </header>
   );
 }
-
-export default Header;
-
-
