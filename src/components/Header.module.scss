@@ -1,0 +1,29 @@
+.headerGlow {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -45%;
+    background: radial-gradient(
+      circle,
+      rgba(255, 105, 180, 0.25),
+      rgba(147, 51, 234, 0.22),
+      transparent 60%
+    );
+    filter: blur(18px);
+    transform: rotate(12deg);
+    pointer-events: none;
+  }
+}
+
+.sparkle {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0); opacity: 0.95; }
+  50% { transform: translateY(-3px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.95; }
+}
